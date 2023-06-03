@@ -1,0 +1,20 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Directories
+node_modules
+tmp
+dist
+
+# Environment Files
+.env
+.env.test
+
+# Editors
+.vscode
+.idea
+
+# OS files
+.DS_Store

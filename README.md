@@ -16,9 +16,9 @@ Crea un fichero docker-compose.yml que levante los siguientes servicios:
 
 - Un servicio llamado `database` que construya y levante la imagen `mongo`. Esta imagen expone el puerto 27017.
 
-- Un servicio llamado `backend` que construya y levante la imagen dentro del directorio `backend`. Esta imagen expone el puerto 4000 y se conecta al servicio `database` en el puerto 27017. Se debe exponer el puerto 4000 para que el servicio `frontend` pueda conectarse a él.
+- Un servicio llamado `backend` que construya y levante la imagen dentro del directorio `backend`. Esta imagen expone el puerto 4000 y se conecta al servicio `database` en el puerto 27017. Se debe exponer el puerto 4000 para que el servicio `frontend` pueda conectarse a él. Este servicio debe aplicar las variables de entorno `JWT_SECRET` y `MONGO_URI`.
 
-- Un servicio llamado `frontend` que construya y levante la imagen dentro del directorio `frontend`. Esta imagen expone el puerto 3000 y se conecta al servicio `backend` en el puerto 4000. Esta conexión, al ser a través del cliente, debe ser a través de la red del host, no de la red de Docker.
+- Un servicio llamado `frontend` que construya y levante la imagen dentro del directorio `frontend`. Esta imagen expone el puerto 3000 y se conecta al servicio `backend` en el puerto 4000. Esta conexión, al ser a través del cliente, debe ser a través de la red del host, no de la red de Docker. Este servicio debe aplicar la variables de entorno `REACT_APP_API_BASE_URL` con la url http completa del servicio backend. Ej: `http://localhost:4000`.
 
 Asegurarse de que la aplicación funcione como la demo en [dobleb.cf](https://dobleb.cf).
 
